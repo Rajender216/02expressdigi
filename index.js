@@ -1,8 +1,11 @@
+// require("dotenv").config(); // 97: If it not works
+import "dotenv/config";
 import express from "express";
 
 const app = express();
 
-const port = 3000;
+// const PORT = 3000
+const port = process.env.PORT || 3000; //97
 /*
 app.get("/", (req, res) => {
   res.send("Hello from Raju's Node.js server");
@@ -30,7 +33,7 @@ app.post("/teas", (req, res) => {
   teaData.push(newTea);
   res.status(201).send(newTea);
 });
-//again get back array
+//get list of all teas
 app.get("/teas", (req, res) => {
   res.status(200).send(teaData);
 });
@@ -94,5 +97,24 @@ OR
     then you can run the server using the command "npm run dev"
 
 
+
+*/
+
+/*
+97. Write tests and documentation with Postman and deployment
+Use dotenv 
+1. goto google and search dotenv and install with a command
+2. goto the folder where the file is saved
+3. open terminal and run npm i dotenv
+4. verify in package.json file
+5. now add require('dotenv').config() in first line of code
+6. create a new file named .env
+7. add the following code to the .env file{
+ like 
+ PORT=3000
+ MONGO_URI=mongodb://localhost:27017/
+}
+ 8.  require('dotenv').config() this not works the use import 'dotenv/config'
+9. after that write const port = process.env.PORT || 3000; at the position of PORT=3000
 
 */
